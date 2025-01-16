@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Quiz</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 20px;
+      background-image: url(/Users/meldaasella/Desktop/intdes/field4.png);
+    }
+    #quiz-container {
+    width: 800px;
+    height: 460px;
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      font-size: 2em;
+    }
+    .options button {
+      display: flex;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .options button.correct {
+      background-color: #4caf50;
+      color: #fff;
+    }
+    .options button.incorrect {
+      background-color: #f44336;
+      color: #fff;
+    }
+    #comment {
+      margin-top: 20px;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    #score {
+      font-size: 1.5em;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="quiz-container">
+<div id="quiz">
+<p class="question"></p>
+<div class="options"></div>
+<div id="comment"></div>
+</div>
+<div id="score" style="display: none;"></div>
+<button onclick="location.href='field 5.html'">Let's go back to the map!</button>
+</div>
+<p><script>
+    const questions = [
+      { 
+        question: "Where can we apply AI in our daily lives?", 
+        options: ["School: Research for Projects", "Work: Drafting Emails", "Leisure: Planning Holidays", "All of the above"], 
+        answer: 3, 
+        comment: "That right! AI can be used for almost anything with today's technology! Generating pictures, videos, helping us with research and ideation!"
+      },
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const question = questions[currentQuestion];
+      $("#question-number").text(`Question ${currentQuestion + 1}/${questions.length}`);
+      $(".question").text(question.question);
+      $(".options").empty();
+      question.options.forEach((option, index) => {
+        $(".options").append(`<button data-index="${index}">${option}</button>`);
+      });
+      $("#comment").text("");
+    }
+
+    $(document).ready(function () {
+      loadQuestion();
+
+      $(".options").on("click", "button", function () {
+        const selected = $(this).data("index");
+        const question = questions[currentQuestion];
+
+        if (selected === question.answer) {
+          $(this).addClass("correct");
+          score++;
+        } else {
+          $(this).addClass("incorrect");
+          $(`.options button[data-index='${question.answer}']`).addClass("correct");
+        }
+
+        $("#comment").text(question.comment);
+
+      });
+    });
+  </script>
+  </p>
+ 
+</body>
+</html>

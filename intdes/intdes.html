@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>The AI Maze</title>
+        <style>
+            body {
+              background-image: url(/Users/meldaasella/Desktop/intdes/field1.png);
+            }
+
+            .container {
+            position: relative; 
+            width: 100%; 
+            height: 100vh; 
+            background-color: #f0f0f0; 
+            text-align: center;
+            }
+
+            .existing-content {
+            padding: 0px; 
+            }
+
+            .browser-window {
+              margin: auto;
+              margin-top: 35px;
+              width: 800px; 
+              height: 460px;
+              background-color: #fff; 
+            }
+        
+            .title-bar {
+              height: 30px;
+              background-color: #f08080; 
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
+              display: flex;
+              align-items: center;
+              padding: 0 10px;
+            }
+        
+            .title-bar button {
+              background-color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 7px;
+              height: 12px;
+              margin-right: 5px;
+              cursor: pointer;
+            }
+        
+            .address-bar {
+              height: 15px;
+              background-color: #ffe6e6; 
+            }
+        
+            .content-area {
+              padding: 90px;
+              text-align: center;
+            }
+
+            h1 {
+            font-size: 80px;
+            line-height: 20%;
+            margin-bottom: 55px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            p {
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+          </style>
+    </head>
+    <body>
+      <div class="browser-window">
+        <div class="title-bar">
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+        <div class="address-bar"></div>
+        <div class="content-area">
+          <h1>WELCOME TO</h1>
+          <h1>THE AI MAZE</h1>
+          <p>CLICK ANYWHERE ON THE SCREEN</p>
+          </div>
+      </div>
+      <script>
+        document.body.addEventListener('click', function() {
+          window.location.href = "intdes2.html"; 
+        });
+      </script>
+    </body>
+</html>
